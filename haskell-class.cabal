@@ -24,7 +24,7 @@ source-repository head
 
 library
   exposed-modules:
-      Lib
+      Homework1
   other-modules:
       Paths_haskell_class
   hs-source-dirs:
@@ -32,23 +32,13 @@ library
   ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
   build-depends:
       base >=4.7 && <5
+    , tasty
+    , tasty-hunit
   default-language: Haskell2010
 
-executable haskell-class-exe
-  main-is: Main.hs
-  other-modules:
-      Paths_haskell_class
-  hs-source-dirs:
-      app
-  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
-  build-depends:
-      base >=4.7 && <5
-    , haskell-class
-  default-language: Haskell2010
-
-test-suite haskell-class-test
+test-suite homework-1-test
   type: exitcode-stdio-1.0
-  main-is: Spec.hs
+  main-is: Homework1Test.hs
   other-modules:
       Paths_haskell_class
   hs-source-dirs:
@@ -57,4 +47,6 @@ test-suite haskell-class-test
   build-depends:
       base >=4.7 && <5
     , haskell-class
+    , tasty
+    , tasty-hunit
   default-language: Haskell2010
