@@ -20,6 +20,8 @@ description:         Please see the README on GitHub at <https://github.com/jgop
 
 dependencies:
 - base >= 4.7 && < 5
+- tasty
+- tasty-hunit
 
 ghc-options:
 - -Wall
@@ -35,20 +37,9 @@ ghc-options:
 library:
   source-dirs: src
 
-executables:
-  haskell-class-exe:
-    main:                Main.hs
-    source-dirs:         app
-    ghc-options:
-    - -threaded
-    - -rtsopts
-    - -with-rtsopts=-N
-    dependencies:
-    - haskell-class
-
 tests:
-  haskell-class-test:
-    main:                Spec.hs
+  homework-1-test:
+    main:                Homework1Test.hs
     source-dirs:         test
     ghc-options:
     - -threaded
