@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "haskell-class"
+version = "0.1.0"
+description = ""
+authors = ["Jonathan Gopel <jgopel@gmail.com>"]
+readme = "README.md"
+packages = [{include = "haskell_class"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+pre-commit = "^2.20.0"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
