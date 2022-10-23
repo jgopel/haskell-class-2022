@@ -12,7 +12,8 @@ main = do
     toDigitsRevTest,
     doubleEveryOtherTest,
     sumDigitsTest,
-    validateTest])
+    validateTest,
+    hanoiTest])
 
 -- basics: https://github.com/Originate/guide/blob/master/haskell/stack-tutorial.md
 
@@ -52,3 +53,9 @@ validateTest :: TestTree
 validateTest = testGroup "validate" [
   testCase "valid example" $ assertEqual "should handle valid example" True (validate 4012888888881881),
   testCase "invalid example" $ assertEqual "should handle invalid example" False (validate 4012888888881882)]
+
+hanoiTest :: TestTree
+hanoiTest = testGroup "hanoi" [
+  testCase "zero rings" $ assertEqual "should handle hanoi with zero rings" [] (hanoi 0 "a" "b" "c"),
+  testCase "one ring" $ assertEqual "should handle hanoi with one ring" [("a", "b")] (hanoi 1 "a" "b" "c"),
+  testCase "provided example" $ assertEqual "should handle provided example" [("a","c"), ("a","b"), ("c","b")] (hanoi 2 "a" "b" "c")]
