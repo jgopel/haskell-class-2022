@@ -37,9 +37,10 @@ toDigitsRevTest = testGroup "toDigitsRev" [
 doubleEveryOtherTest :: TestTree
 doubleEveryOtherTest = testGroup "doubleEveryOther" [
   testCase "zero integers" $ assertEqual "should handle empty list" [] (doubleEveryOther []),
-  testCase "one integer" $ assertEqual "should handle list with single element" [2] (doubleEveryOther [1]),
+  testCase "one integer" $ assertEqual "should handle list with single element" [1] (doubleEveryOther [1]),
   testCase "many integers" $ assertEqual "should handle list with multiple elements" [2, 2, 6, 4] (doubleEveryOther [1, 2, 3, 4]),
-  testCase "provided example" $ assertEqual "should work on provided example" [16, 7, 12, 5] (doubleEveryOther [8, 7, 6, 5])]
+  testCase "provided example 1" $ assertEqual "should work on provided examples" [16, 7, 12, 5] (doubleEveryOther [8, 7, 6, 5]),
+  testCase "provided example 2" $ assertEqual "should work on provided examples" [1, 4, 3] (doubleEveryOther [1, 2, 3])]
 
 sumDigitsTest :: TestTree
 sumDigitsTest = testGroup "sumDigits" [

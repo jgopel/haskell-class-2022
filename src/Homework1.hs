@@ -1,17 +1,20 @@
 module Homework1 where
 
-toDigitsRev :: Integer -> [Integer]
-toDigitsRev x
-  | x <= 0    = []
-  | otherwise = x `mod` 10 : toDigitsRev (x `div` 10)
-
 toDigits :: Integer -> [Integer]
-toDigits = reverse . toDigitsRev
+toDigits x
+  | x <= 0    = []
+  | otherwise = toDigits (x `div` 10) ++ [x `mod` 10]
+
+toDigitsRev :: Integer -> [Integer]
+toDigitsRev = reverse . toDigits
+
+doubleEveryOtherFromFirst :: [Integer] -> [Integer]
+doubleEveryOtherFromFirst [] = []
+doubleEveryOtherFromFirst (x:[]) = [x]
+doubleEveryOtherFromFirst (x:y:xs) = x : y*2 : doubleEveryOtherFromFirst xs
 
 doubleEveryOther :: [Integer] -> [Integer]
-doubleEveryOther [] = []
-doubleEveryOther (x:[]) = [x * 2]
-doubleEveryOther (x:(y:xs)) = x*2 : y : doubleEveryOther xs
+doubleEveryOther = reverse . doubleEveryOtherFromFirst . reverse
 
 sumDigitsImpl :: [Integer] -> [Integer]
 sumDigitsImpl [] = []
