@@ -1,4 +1,4 @@
-FROM ubuntu:jammy
+FROM ubuntu:kinetic
 RUN yes | unminimize \
     && apt-get update \
     && apt-get install --yes \
